@@ -39,20 +39,14 @@ public class MovimentoAction {
 		tableList.doReload();
 	}
 
-	/**
-	 *  TODO O mÈtodo È invocado quando o bot„o 'Pesquisar' (Lupa) È clicado!
-	 *  Passo1 - Receber um objeto com os critÈrios de busca;
-	 *  Passo2 - Executar o SQL para receber o resultado da busca (lista);
-	 *  Passo2 - Retornar a lista para que a Grid seja atualizada.
-	 */
 	public static ArrayList<Movimento> doLoadList(Movimento objeto){
 
 		ArrayList<Movimento> lista = new ArrayList<Movimento>();
 
-		//SeleÁ„o de Registros
+		//Sele√ß√£o de Registros
 		String querySelect = "SELECT m.*,c.nomedocliente FROM Movimento m left join cliente c on c.id = m.id_cliente  WHERE m.id<>1 ";
 
-		//--Realizar tratamento (Verificar se È WHERE ou AND)..
+		//--Realizar tratamento (Verificar se √© WHERE ou AND)..
 		boolean isWhere = false;
 		if(objeto.getId()!=null){
 			if(isWhere){
@@ -123,7 +117,7 @@ public class MovimentoAction {
 
 
 	/**
-	 *  TODO MÈtodo respons·vel por configurar a grid da tela de pesquisa! 
+	 *  M√©todo respons√°vel por configurar a grid da tela de pesquisa! 
 	 */
 	public void createTable(Window window, JPanel panel){
 
@@ -157,20 +151,20 @@ public class MovimentoAction {
 		Font fonte = new Font("Times New Roman", Font.ITALIC, 16);
 		tableList.setTitleFont(fonte);
 
-		//Adicionando cabeÁalho com tÌtulo e imagem
+		//Adicionando cabe√ßalho com t√≠tulo e imagem
 		tableList.setTitle("Pesquisa - Movimento",ImageUtils.resizeImageIcon("Imagens/canstock11432632.png",32,32));
 
-		//Configurando mÈtodo para adiÁ„o de registros
+		//Configurando m√©todo para adi√ß√£o de registros
 		tableList.setNewMethod("doNew");
 
-		//Configurando mÈtodo para impress„o de relatÛrios
+		//Configurando m√©todo para impress√£o de relat√≥rios
 		tableList.setReportMethod("doPrintReport");
 
-		//Adicionando bot„o para visualizaÁ„o
+		//Adicionando bot√£o para visualiza√ß√£o
 		ImageIcon imageOpen = new ImageIcon(getClass().getClassLoader().getResource("Framework/Imagens/abrir.png"));
 		tableList.addButton(imageOpen, "doLoad", "Visualizar");
 
-		//Adicionando bot„o para exclus„o
+		//Adicionando bot√£o para exclus√£o
 		ImageIcon imageExcluir = new ImageIcon(getClass().getClassLoader().getResource("Framework/Imagens/excluir.png"));
 		tableList.addButton(imageExcluir, "doRemove", "Excluir");
 
@@ -180,11 +174,11 @@ public class MovimentoAction {
 	}
 
 	/**
-	 *  MÈtodo para adicionar registros
+	 *  M√©todo para adicionar registros
 	 */
 	public static void doNew(){
 		Integer id_movimento=0;
-		//SeleÁ„o de Registros
+		//Sele√ß√£o de Registros
 		String querySelect = "select id from movimento order by id desc LIMIT 1";
 		ResultSet rs = ConnectionUtils.executeQuery(querySelect);
 
@@ -203,7 +197,7 @@ public class MovimentoAction {
 	}
 
 	/**
-	 *  MÈtodo para visualizar registros
+	 *  M√©todo para visualizar registros
 	 */
 	public static void doLoad(Movimento Movimento){
 		MovimentoItem.id_movimento = Movimento.getId();
@@ -214,11 +208,11 @@ public class MovimentoAction {
 	}
 
 	/**
-	 *  MÈtodo para remover registros
+	 *  M√©todo para remover registros
 	 */
 	public static void doRemove(Movimento objeto){
 
-		int option = JOptionPane.showConfirmDialog(null,"Realmente deseja excluir o movimento?","AtenÁ„o!",1 );
+		int option = JOptionPane.showConfirmDialog(null,"Realmente deseja excluir o movimento?","Aten√ß√£o!",1 );
 
 		if(option == 0){
 
@@ -227,12 +221,9 @@ public class MovimentoAction {
 			}else{
 				EstoqueAction.reprocessaEstoque(objeto.getId(), "+");
 			}
-			
-			
-			//TODO Executar SQL para exclus„o de objeto
-			JOptionPane.showMessageDialog(null,"Exclus„o de Objetos");
+			JOptionPane.showMessageDialog(null,"Exclus√£o de Objetos");
 
-			//RemoÁ„o de Registros
+			//Remo√ß√£o de Registros
 			String queryDelete = "DELETE FROM Movimento WHERE id = "+objeto.getId();
 			ConnectionUtils.executeUpdate(queryDelete);
 			
@@ -246,7 +237,7 @@ public class MovimentoAction {
 	}
 
 	/**
-	 *  MÈtodo para imprimir relatÛrios!
+	 *  M√©todo para imprimir relat√≥rios!
 	 *  Somente o que aparece na grid deve ser impresso.
 	 */
 	public static void doPrintReport(){

@@ -56,10 +56,10 @@ import Utils.BuscaDados;
  */
 
 /**
- *  @author Elvis Dobner da Rosa
+ *  @author Alex Rambo
  *  @since 10/02/2011
  *  
- *  Classe demosntraÁ„o para construÁ„o de janela (tipo JFrame).
+ *  Classe demosntra√ß√£o para constru√ß√£o de janela (tipo JFrame).
  */
 public class CadastroMovimento extends JFrame{
 	private JButton jButton1;
@@ -78,7 +78,7 @@ public class CadastroMovimento extends JFrame{
 
 	/**
 	 *  TODO Construtor da classe
-	 *  O construtor È invocado quando a classe È criada!
+	 *  O construtor √© invocado quando a classe √© criada!
 	 */
 	public CadastroMovimento(Integer idMovimento){
 		super();
@@ -87,17 +87,17 @@ public class CadastroMovimento extends JFrame{
 	}
 
 	/**
-	 *  TODO MÈtodo respons·vel por construir a interface da janela.
+	 *  TODO M√©todo respons√°vel por construir a interface da janela.
 	 */
 	public void initGUI(){
 
 		//Coloca mensagem na barra do programa
 		this.setTitle("Cadastro Movimento");
 
-		//Permite Maximizat ou n„o true (sim) false (n„o)
+		//Permite Maximizat ou n√£o true (sim) false (n√£o)
 		this.setResizable(false);
 
-		//Define a operaÁ„o padr„o ao clicar no bot„o 'close'
+		//Define a opera√ß√£o padr√£o ao clicar no bot√£o 'close'
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		//Serve para desenhar dentro do Panel
 		this.pack();
@@ -105,7 +105,7 @@ public class CadastroMovimento extends JFrame{
 		//Definindo o tamanho da janela
 		this.setSize(858, 555);
 
-		//Obtendo resoluÁ„o da tela
+		//Obtendo resolu√ß√£o da tela
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 
 		//Centralizando janela na tela obtida
@@ -142,7 +142,7 @@ public class CadastroMovimento extends JFrame{
 			{
 				ComboBoxModel jComboBox1Model = 
 						new DefaultComboBoxModel(
-								new String[] {"Entrada", "SaÌda" });
+								new String[] {"Entrada", "Sa√≠da" });
 				jComboBoxTpMovimento = new JComboBox();
 				panelFundo.add(jComboBoxTpMovimento);
 				jComboBoxTpMovimento.setModel(jComboBox1Model);

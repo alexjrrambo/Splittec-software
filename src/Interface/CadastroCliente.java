@@ -43,10 +43,10 @@ import Utils.ConnectionUtils;
  */
 
 /**
- *  @author Elvis Dobner da Rosa
+ *  @author Alex Rambo
  *  @since 10/02/2011
  *  
- *  Classe demosntraÁ„o para construÁ„o de janela (tipo JFrame).
+ *  Classe demosntra√ß√£o para constru√ß√£o de janela (tipo JFrame).
  */
 public class CadastroCliente extends JFrame{
 
@@ -84,7 +84,7 @@ public class CadastroCliente extends JFrame{
 
 	/**
 	 *  TODO Construtor da classe
-	 *  O construtor È invocado quando a classe È criada!
+	 *  O construtor √© invocado quando a classe √© criada!
 	 */
 	public CadastroCliente(){
 		super();
@@ -92,17 +92,17 @@ public class CadastroCliente extends JFrame{
 	}
 
 	/**
-	 *  TODO MÈtodo respons·vel por construir a interface da janela.
+	 *  TODO M√©todo respons√°vel por construir a interface da janela.
 	 */
 	public void initGUI(){
 
 		//Coloca mensagem na barra do programa
 		this.setTitle("Cadastro Cliente");
 
-		//Permite Maximizat ou n„o true (sim) false (n„o)
+		//Permite Maximizat ou n√£o true (sim) false (n√£o)
 		this.setResizable(false);
 
-		//Define a operaÁ„o padr„o ao clicar no bot„o 'close'
+		//Define a opera√ß√£o padr√£o ao clicar no bot√£o 'close'
 		this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		//Serve para desenhar dentro do Panel
 		this.pack();
@@ -110,7 +110,7 @@ public class CadastroCliente extends JFrame{
 		//Definindo o tamanho da janela
 		this.setSize(625, 452);
 
-		//Obtendo resoluÁ„o da tela
+		//Obtendo resolu√ß√£o da tela
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
 
 		//Centralizando janela na tela obtida
@@ -248,7 +248,7 @@ public class CadastroCliente extends JFrame{
 			{
 				jLabel14 = new JLabel();
 				panelFundo.add(jLabel14);
-				jLabel14.setText("EndereÁo do Cliente");
+				jLabel14.setText("Endere√ßo do Cliente");
 				jLabel14.setBounds(339, -9, 274, 55);
 				jLabel14.setFont(new java.awt.Font("Times New Roman",2,26));
 				jLabel14.setForeground(new java.awt.Color(0,0,0));
@@ -300,7 +300,7 @@ public class CadastroCliente extends JFrame{
 			{
 				jRadioButton2 = new JRadioButton();
 				panelFundo.add(jRadioButton2);
-				jRadioButton2.setText("N„o");
+				jRadioButton2.setText("N√£o");
 				jRadioButton2.setBounds(484, 140, 54, 14);
 				jRadioButton2.setFont(new java.awt.Font("Century Gothic",2,12));
 				jRadioButton2.setAutoscrolls(true);
@@ -309,7 +309,7 @@ public class CadastroCliente extends JFrame{
 			{
 				ComboBoxModel jComboBox1Model = 
 					new DefaultComboBoxModel(
-							new String[] { "Brasil", "Argentina", "Argentina", "Bolivia", "Paraguai", "Uruguai", "Chile", "Mexico", "EUA", "Africa", "Jap„o", "China", "Australia" });
+							new String[] { "Brasil", "Argentina", "Argentina", "Bolivia", "Paraguai", "Uruguai", "Chile", "Mexico", "EUA", "Africa", "Jap√£o", "China", "Australia" });
 				jComboBox1 = new JComboBox();
 				panelFundo.add(jComboBox1);
 				jComboBox1.setModel(jComboBox1Model);
@@ -326,7 +326,7 @@ public class CadastroCliente extends JFrame{
 			{
 				jLabel7 = new JLabel();
 				panelFundo.add(jLabel7);
-				jLabel7.setText("CÛdigo:");
+				jLabel7.setText("C√≥digo:");
 				jLabel7.setFont(new java.awt.Font("Century Gothic",2,12));
 				jLabel7.setForeground(new java.awt.Color(0,0,0));
 				jLabel7.setBounds(321, 164, 113, 16);

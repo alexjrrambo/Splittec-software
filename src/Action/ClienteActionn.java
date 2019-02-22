@@ -21,7 +21,7 @@ import Utils.PropertiesUtils;
 import Utils.ReportUtils;
 
 /**
- *  @author Elvis Dobner da Rosa
+ *  @author Alex Junior Rambo
  *  @since 10/02/2011
  */
 public class ClienteActionn {

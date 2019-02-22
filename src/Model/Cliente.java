@@ -5,7 +5,7 @@ import Framework.Annotations.Id;
 import Framework.Annotations.Title;
 
 /**
- *  @author Elvis Dobner da Rosa
+ *  @author Alex Rambo
  *  @since 10/02/2011
  *  
  *  TODO Essa classe deve ser um espelho do banco de dados (tabela pessoa)
@@ -14,7 +14,7 @@ public class Cliente {
 
 
 	@Id
-	@Title(name="Código")
+	@Title(name="CÃ³digo")
 	@Find(find=true,size=0.5)
 	private Integer id;
 

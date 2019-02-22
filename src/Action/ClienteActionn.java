@@ -29,27 +29,21 @@ public class ClienteActionn {
 	//Grid da tela de pesquisa!
 	public static JTableList tableList;
 
-	/**
-	 *  TODO Atualiza a lista na grid!
-	 */
+	
+	//atualiza a lista na grid!	 
 	public static void doReload(){
 		tableList.doReload();
 	}
 
-	/**
-	 *  TODO O mÈtodo È invocado quando o bot„o 'Pesquisar' (Lupa) È clicado!
-	 *  Passo1 - Receber um objeto com os critÈrios de busca;
-	 *  Passo2 - Executar o SQL para receber o resultado da busca (lista);
-	 *  Passo2 - Retornar a lista para que a Grid seja atualizada.
-	 */
+	
 	public static ArrayList<Cliente> doLoadList(Cliente objeto){
 
 		ArrayList<Cliente> lista = new ArrayList<Cliente>();
 
-		//SeleÁ„o de Registros
+		//Sele√ß√£o de Registros
 		String querySelect = "SELECT * FROM Cliente";
 
-		//--Realizar tratamento (Verificar se È WHERE ou AND)..
+		//--Realizar tratamento (Verificar se √© WHERE ou AND)..
 		boolean isWhere = true;
 		if(objeto.getId()!=null){
 			if(isWhere){
@@ -132,9 +126,8 @@ public class ClienteActionn {
 	}
 
 
-	/**
-	 *  TODO MÈtodo respons·vel por configurar a grid da tela de pesquisa! 
-	 */
+	
+	//M√©todo respons√°vel por configurar a grid da tela de pesquisa! 	 
 	public void createTable(Window window, JPanel panel){
 
 		//---Salvando Propriedades---
@@ -167,20 +160,20 @@ public class ClienteActionn {
 		Font fonte = new Font("Times New Roman", Font.ITALIC, 16);
 		tableList.setTitleFont(fonte);
 
-		//Adicionando cabeÁalho com tÌtulo e imagem
+		//Adicionando cabe√ßalho com t√≠tulo e imagem
 		tableList.setTitle("Pesquisa - Cliente",ImageUtils.resizeImageIcon("Imagens/canstock11432632.png",32,32));
 
-		//Configurando mÈtodo para adiÁ„o de registros
+		//Configurando m√©todo para adi√ß√£o de registros
 		tableList.setNewMethod("doNew");
 
-		//Configurando mÈtodo para impress„o de relatÛrios
+		//Configurando m√©todo para impress√£o de relat√≥rios
 		tableList.setReportMethod("doPrintReport");
 
-		//Adicionando bot„o para visualizaÁ„o
+		//Adicionando bot√£o para visualiza√ß√£o
 		ImageIcon imageOpen = new ImageIcon(getClass().getClassLoader().getResource("Framework/Imagens/abrir.png"));
 		tableList.addButton(imageOpen, "doLoad", "Visualizar");
 
-		//Adicionando bot„o para exclus„o
+		//Adicionando bot√£o para exclus√£o
 		ImageIcon imageExcluir = new ImageIcon(getClass().getClassLoader().getResource("Framework/Imagens/excluir.png"));
 		tableList.addButton(imageExcluir, "doRemove", "Excluir");
 
@@ -190,7 +183,7 @@ public class ClienteActionn {
 	}
 
 	/**
-	 *  MÈtodo para adicionar registros
+	 *  M√©todo para adicionar registros
 	 */
 	public static void doNew(){
 
@@ -199,7 +192,7 @@ public class ClienteActionn {
 	}
 
 	/**
-	 *  MÈtodo para visualizar registros
+	 *  M√©todo para visualizar registros
 	 */
 	public static void doLoad(Cliente Cliente){
 
@@ -209,18 +202,18 @@ public class ClienteActionn {
 	}
 
 	/**
-	 *  MÈtodo para remover registros
+	 *  M√©todo para remover registros
 	 */
 	public static void doRemove(Cliente objeto){
 
-		int option = JOptionPane.showConfirmDialog(null,"Realmente deseja excluir?","AtenÁ„o!",1 );
+		int option = JOptionPane.showConfirmDialog(null,"Realmente deseja excluir?","Aten√ß√£o!",1 );
 
 		if(option == 0){
 
-			//TODO Executar SQL para exclus„o de objeto
-			JOptionPane.showMessageDialog(null,"Exclus„o de Objetos");
+			//TODO Executar SQL para exclus√£o de objeto
+			JOptionPane.showMessageDialog(null,"Exclus√£o de Objetos");
 
-			//RemoÁ„o de Registros
+			//Remo√ß√£o de Registros
 			String queryDelete = "DELETE FROM Cliente WHERE id = "+objeto.getId();
 			ConnectionUtils.executeUpdate(queryDelete);
 
@@ -231,7 +224,7 @@ public class ClienteActionn {
 	}
 
 	/**
-	 *  MÈtodo para imprimir relatÛrios!
+	 *  M√©todo para imprimir relat√≥rios!
 	 *  Somente o que aparece na grid deve ser impresso.
 	 */
 	public static void doPrintReport(){
